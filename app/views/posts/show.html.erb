@@ -1,2 +1,19 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% if @action == 'created' || @action == 'updated' %>
+        <h1>The post has been <%= @action %> successfully</h1>
+        <% else %>
+        <h1 class="text-center"><%= @post.title %></h1>
+        <p class="text-justify"><%= markdown(@post.content) %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to "All Posts",posts_path %>
+    </div>
+  </div>
+</div>

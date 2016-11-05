@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>LaTiendaDeMemo</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,5 +10,9 @@
 
   <body>
     <%= yield %>
+    <script>
+      $('.alert').fadeIn(500).css("opacity","0.85").delay(2500).slideUp(900);
+      $('.alerts').on('click','.alert',function(){$(this).remove()});
+    </script>
   </body>
 </html>
